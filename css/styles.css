@@ -1,5 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  height: 40px;
+  width: 130px;
+  background-color: white;
+  border: 2px solid red;
+}
+
+button:hover {
+  background-color: rgb(252, 72, 72);
+  color: black;
+}
+
 h1 {
   font-weight: 500;
   font-size: 40px;
-  color: blueviolet;
+  color: black;
+  margin-bottom: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 450px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.square {
+  height: 200px;
+  width: 200px;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
 }
