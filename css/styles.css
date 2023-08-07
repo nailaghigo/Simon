@@ -5,16 +5,23 @@ body {
   align-items: center;
 }
 
-button {
+.start-button {
   height: 40px;
   width: 130px;
   background-color: white;
   border: 2px solid red;
 }
 
-button:hover {
+.start-button:hover {
   background-color: rgb(252, 72, 72);
   color: black;
+}
+
+.start-button:disabled {
+  background-color: #b6b5b5;
+  color: white;
+  border: 2px solid #7e7e7e;
+  cursor: not-allowed;
 }
 
 h1 {
@@ -39,16 +46,25 @@ h1 {
 
 .blue {
   background-color: blue;
+  opacity: 0.75;
 }
 
 .red {
   background-color: red;
+  opacity: 0.75
 }
 
 .green {
   background-color: green;
+  opacity: 0.75
 }
 
 .yellow {
   background-color: yellow;
+  opacity: 0.75
+}
+
+.highlighted{
+  opacity: 1;
+  border: 2px solid black;
 }
