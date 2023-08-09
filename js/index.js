@@ -7,6 +7,11 @@ var isGameStarted = false
 var startGameButton = document.querySelector('.start-button')
 var square = document.querySelector('.container')
 
+function handlePlayerClick (e) {
+  var squareColor = e.target.classList[1]
+  console.log('color', squareColor)
+}
+
 function nextColor() {
   var index = Math.floor(Math.random() * colors.length)
   var color = colors[index]
@@ -52,4 +57,5 @@ function nextRound()  {
   }
 }
 
+square.addEventListener('click', handlePlayerClick)
 startGameButton.addEventListener('click', nextRound)
