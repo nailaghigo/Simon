@@ -25,8 +25,15 @@ body {
 }
 
 h1 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 40px;
+  color: black;
+  margin-bottom: 50px;
+}
+
+h2, .level-counter {
+  font-weight: 500;
+  font-size: 25px;
   color: black;
   margin-bottom: 50px;
 }
@@ -42,6 +49,7 @@ h1 {
 .square {
   height: 200px;
   width: 200px;
+  cursor: pointer;
 }
 
 .blue {
