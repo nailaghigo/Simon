@@ -21,6 +21,7 @@ function handlePlayerClick (e) {
   if (currentPlayer === 'player') {
     playerClickCount++
     var squareColor = e.target.classList[1]
+    highlightColor(squareColor)
 
     if (simonSequence[playerClickCount - 1].color !== squareColor) {
       alert("Game Over! Try again.")
@@ -51,19 +52,22 @@ function nextColor() {
   return {index, color}
 }
 
-function highlightedColor(i, color) {
+function highlightColor (color) {
+  var selectedColor = document.querySelector('#' + color)
+  selectedColor.classList.add('highlighted')
+
+  setTimeout(function(){
+    selectedColor.classList.remove('highlighted')
+  }, 500)
+}
+
+function highlightNextColor(i, color) {
   if (i === simonSequence.length - 1) {
     nextLevel()
   }
 
   setTimeout(function () {
-    var selectedColor = document.querySelector('#' + color)
-    selectedColor.classList.add('highlighted')
-
-    setTimeout(function(){
-      selectedColor.classList.remove('highlighted')
-
-    }, 500)
+    highlightColor(color)
   }, (i + 1) * 600)
 }
 
@@ -87,7 +91,7 @@ function nextRound()  {
     simonSequence.push(color)
 
     for (var i = 0; i < simonSequence.length; i++) {
-      highlightedColor(i, simonSequence[i].color)
+      highlightNextColor(i, simonSequence[i].color)
     }
 
     playerClickCount = 0
