@@ -8,25 +8,28 @@ var currentPlayer = 'computer'
 var startGameButton = document.querySelector('.start-button')
 var square = document.querySelector('.container')
 
+function resetGame () {
+  simonSequence = []
+  playerClickCount = 0
+  counterLevel = 0
+  isGameStarted = false
+  startGameButton.disabled = false
+  currentPlayer = 'computer'
+}
+
 function handlePlayerClick (e) {
   if (currentPlayer === 'player') {
     playerClickCount++
     var squareColor = e.target.classList[1]
 
     if (simonSequence[playerClickCount - 1].color !== squareColor) {
-      // END GAME
-      alert("Game Over! Try again.");
-      simonSequence = []
-      playerClickCount = 0
-      counterLevel = 0
-      isGameStarted = false
-      startGameButton.disabled = false
-      currentPlayer = 'computer'
+      alert("Game Over! Try again.")
+      resetGame()
     }
 
     if (playerClickCount === simonSequence.length) {
-      currentPlayer = "computer"; // Cambia el turno a la computadora
-      setTimeout(nextRound, 1000);
+      currentPlayer = "computer"
+      setTimeout(nextRound, 1000)
     }
   }
 }
@@ -35,10 +38,10 @@ function checkPattern() {
   for (var i = 0; i < playerSequence.length; i++) {
 
     if (playerSequence[i] !== simonSequence[i]) {
-      return false;
+      return false
     }
   }
-  return true;
+  return true
 }
 
 function nextColor() {
