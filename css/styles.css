@@ -5,45 +5,47 @@ body {
   align-items: center;
 }
 
-.start-button {
-  height: 40px;
-  width: 130px;
-  background-color: white;
-  border: 2px solid red;
-}
-
-.start-button:hover {
-  background-color: rgb(252, 72, 72);
-  color: black;
-}
-
-.start-button:disabled {
-  background-color: #b6b5b5;
-  color: white;
-  border: 2px solid #7e7e7e;
-  cursor: not-allowed;
-}
-
 h1 {
+  margin-bottom: 50px;
   font-weight: 600;
   font-size: 40px;
-  color: black;
-  margin-bottom: 50px;
+  color: #000000;
 }
 
 h2, .level-counter {
+  margin-bottom: 50px;
   font-weight: 500;
   font-size: 25px;
+  color: #000000;
+}
+
+.start-button {
+  height: 40px;
+  width: 130px;
+  background-color: #ffffff;
+  border: 2px solid #ff0000;
+}
+
+.start-button:hover {
   color: black;
-  margin-bottom: 50px;
+  background-color: #fc4848;
+}
+
+.start-button:disabled {
+  border: 2px solid #7e7e7e;
+  color: #ffffff;
+  background-color: #b6b5b5;
+  cursor: not-allowed;
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  max-width: 450px;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+  max-width: 450px;
+  min-height: 450px;
+  margin-bottom: 20px;
 }
 
 .square {
@@ -53,26 +55,26 @@ h2, .level-counter {
 }
 
 .blue {
-  background-color: blue;
+  background-color: #0000ff;
   opacity: 0.75;
 }
 
 .red {
-  background-color: red;
+  background-color: #ff0000;
   opacity: 0.75
 }
 
 .green {
-  background-color: green;
+  background-color: #008000;
   opacity: 0.75
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: #ffff00;
   opacity: 0.75
 }
 
-.highlighted{
+.highlighted {
+  outline: 2px solid #000000;
   opacity: 1;
-  border: 2px solid black;
 }
