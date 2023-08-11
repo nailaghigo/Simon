@@ -7,6 +7,10 @@ var currentPlayer = 'computer'
 
 var startGameButton = document.querySelector('.start-button')
 var square = document.querySelector('.container')
+var levelText = document.querySelector('.level-counter')
+
+square.addEventListener('click', handlePlayerClick)
+startGameButton.addEventListener('click', nextRound)
 
 function resetGame () {
   simonSequence = []
@@ -24,12 +28,12 @@ function handlePlayerClick (e) {
     highlightColor(squareColor)
 
     if (simonSequence[playerClickCount - 1].color !== squareColor) {
-      alert("Game Over! Try again.")
+      alert('Game Over! Try again.')
       resetGame()
     }
 
     if (playerClickCount === simonSequence.length) {
-      currentPlayer = "computer"
+      currentPlayer = 'computer'
       setTimeout(nextRound, 1000)
     }
   }
@@ -73,7 +77,7 @@ function highlightNextColor(i, color) {
 
 function nextLevel() {
   counterLevel += 1
-  document.querySelector('.level-counter').innerHTML = counterLevel
+  levelText.innerHTML = counterLevel
   currentPlayer = currentPlayer === 'computer' ? 'player' : 'computer'
 
   nextRound()
@@ -97,6 +101,3 @@ function nextRound()  {
     playerClickCount = 0
   }
 }
-
-square.addEventListener('click', handlePlayerClick)
-startGameButton.addEventListener('click', nextRound)
